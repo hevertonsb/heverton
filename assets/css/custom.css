@@ -99,11 +99,10 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
 }
 
 .spotlights > section > .image:hover{
-	transform: scale(1.02);
-
 	filter:
+		brightness(1.08)
 		drop-shadow(0 8px 20px rgba(0,0,0,.25))
-		drop-shadow(0 0 18px rgba(255,255,255,.08));
+		drop-shadow(0 0 20px rgba(21,94,117,.35));
 }
 
 
@@ -188,10 +187,7 @@ input[type="submit"]:after, input[type="reset"]:after, input[type="button"]:afte
 
 p {
     margin: 0 0 1em 0;
-}
-
-#intro {
-	background-image: url('../../images/intro.svg');
+	font-size: 1.25rem;
 }
 
 em{
@@ -232,4 +228,40 @@ em{
         opacity:1;
         transform:translateY(0);
     }
+}
+
+.line{
+    fill:none;
+    stroke:rgba(255,255,255,.06);
+    stroke-width:1.5;
+}
+
+.vertical{
+    opacity:.25;
+}
+
+.dot{
+    fill:#fff;
+    opacity:.25;
+}
+
+#intro.hero-bg{
+    position:relative;
+    overflow:hidden;
+}
+
+#intro .hero-lines{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:1;
+    pointer-events:none;
+}
+
+#intro .inner{
+    position:relative;
+    z-index:2;
 }

@@ -20,6 +20,95 @@ function externalLinks() {
 
 externalLinks();
 
+gsap.registerPlugin();
+
+// animação inicial das linhas
+document.querySelectorAll(".line").forEach((line) => {
+
+	const length = line.getTotalLength();
+
+	gsap.set(line, {
+		strokeDasharray: length,
+		strokeDashoffset: length
+	});
+
+	gsap.to(line, {
+		strokeDashoffset: 0,
+		duration: 6,
+		ease: "none"
+	});
+
+});
+
+
+// movimento contínuo das linhas
+gsap.to(".line", {
+	y: "+=25",
+	duration: 8,
+	stagger: 1,
+	repeat: -1,
+	yoyo: true,
+	ease: "sine.inOut"
+});
+
+
+// pontos pulsando
+gsap.to(".dot", {
+	scale: 2.5,
+	opacity: .1,
+	duration: 2,
+
+	stagger: {
+		each: .2,
+		repeat: -1
+	},
+
+	repeat: -1,
+	yoyo: true,
+	ease: "sine.inOut"
+});
+
+
+// pequenas movimentações aleatórias nos pontos
+document.querySelectorAll(".dot").forEach(dot => {
+
+	gsap.to(dot, {
+		x: "random(-15,15)",
+		y: "random(-15,15)",
+		duration: "random(3,6)",
+		repeat: -1,
+		yoyo: true,
+		ease: "sine.inOut"
+	});
+
+});
+
+
+// efeito mouse / parallax
+window.addEventListener("mousemove", (e) => {
+
+	let x = (e.clientX - window.innerWidth / 2) * 0.03;
+	let y = (e.clientY - window.innerHeight / 2) * 0.03;
+
+	gsap.to(".hero-lines", {
+		x,
+		y,
+		duration: 2,
+		ease: "power2.out"
+	});
+
+});
+
+
+// movimento suave constante no SVG inteiro
+gsap.to(".hero-lines", {
+	y: -20,
+	duration: 10,
+	repeat: -1,
+	yoyo: true,
+	ease: "sine.inOut"
+});
+
 
 (function ($) {
 
