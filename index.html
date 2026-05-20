@@ -217,15 +217,19 @@
 					Se você tem um projeto em mente, vamos conversar.</p>
 				<div class="split style1">
 					<section>
-						<form method="post" action="#">
+
+						<div data-fs-success>Thanks for your submission!</div>
+						<div data-fs-error>Oops! There was a problem submitting your form.</div>
+
+						<form id="my-form" method="post" action="https://formspree.io/f/xjgzyrpw">
 							<div class="fields">
 								<div class="field half">
 									<label for="name">Nome</label>
-									<input type="text" name="name" id="name" />
+									<input type="text" name="name" id="name" required />
 								</div>
 								<div class="field half">
 									<label for="email">E-mail</label>
-									<input type="text" name="email" id="email" />
+									<input type="text" name="email" id="email" required />
 								</div>
 								<div class="field">
 									<label for="message">Mensagem</label>
@@ -233,7 +237,7 @@
 								</div>
 							</div>
 							<ul class="actions">
-								<li><a href="" class="button submit">Enviar</a></li>
+								<li><button type="submit" class="button submit">Enviar</button></li>
 							</ul>
 						</form>
 					</section>
@@ -289,6 +293,19 @@
 	-->
 
 	<!-- Scripts -->
+	<script>
+		window.formspree =
+			window.formspree ||
+			function () {
+				(formspree.q = formspree.q || []).push(arguments);
+			};
+		formspree("initForm", {
+			formElement: "#my-form",
+			formId: "xjgzyrpw",
+		});
+	</script>
+	<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
