@@ -87,6 +87,25 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
 	}
 }
 
+.spotlights > section{
+	overflow: hidden;
+}
+
+.spotlights > section > .image{
+	
+	transition:
+		transform .35s ease,
+		filter .35s ease;
+}
+
+.spotlights > section > .image:hover{
+	transform: scale(1.02);
+
+	filter:
+		drop-shadow(0 8px 20px rgba(0,0,0,.25))
+		drop-shadow(0 0 18px rgba(255,255,255,.08));
+}
+
 
 @media screen and (max-width: 980px) {
     .spotlights > section {

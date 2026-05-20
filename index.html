@@ -162,7 +162,7 @@
 
 		<section id="sobre" class="wrapper style3 fade-up">
 			<div class="inner">
-				<h2>What we do</h2>
+				<h2>O que eu faço</h2>
 				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat
 					malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
 					imperdiet est velit quis lorem.</p>
@@ -215,9 +215,9 @@
 				<div class="split style1">
 					<section>
 
-						<div data-fs-success class="form-message success" style="display: block;">Mensagem enviada com
+						<div data-fs-success class="form-message success">Mensagem enviada com
 							sucesso! Retornarei em breve.</div>
-						<div data-fs-error class="form-message error" style="display: block;">Ocorreu um problema
+						<div data-fs-error class="form-message error">Ocorreu um problema
 							ao enviar a mensagem.
 							Tente novamente.</div>
 
@@ -265,7 +265,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#" class="icon brands fa-github">
+										<a href="https://github.com/hevertonsb" class="icon brands fa-github">
 											<span class="label">GitHub</span>
 										</a>
 									</li>
@@ -306,6 +306,22 @@
 			formElement: "#my-form",
 			formId: "xjgzyrpw",
 		});
+	</script>
+
+	<script>
+		function externalLinks() {
+			var links = document.getElementsByTagName("a");
+
+			for (var i = 0; i < links.length; i++) {
+				var link = links[i];
+
+				if (link.getAttribute("href") && link.hostname !== location.hostname) {
+					if (!link.getAttribute("target") || link.getAttribute("target") === "") {
+						link.target = "_blank";
+					}
+				}
+			}
+		}
 	</script>
 
 

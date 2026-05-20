@@ -4,6 +4,23 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function externalLinks() {
+	var links = document.getElementsByTagName("a");
+
+	for (var i = 0; i < links.length; i++) {
+		var link = links[i];
+
+		if (link.getAttribute("href") && link.hostname !== location.hostname) {
+			if (!link.getAttribute("target") || link.getAttribute("target") === "") {
+				link.target = "_blank";
+			}
+		}
+	}
+}
+
+externalLinks();
+
+
 (function ($) {
 
 	var $window = $(window),
