@@ -178,3 +178,39 @@ p {
 em{
 	font-size: .6em;
 }
+
+.form-message{
+    margin:0 0 2rem;
+    padding:1rem 1.5rem;
+    border-radius:.25em;
+    font-size:1.15rem;
+    display:none;
+    animation:fadeUp .4s ease;
+	width: 95%;
+}
+
+.form-message.success{
+    background:rgba(15,118,110,.12);
+    border:1px solid rgba(15,118,110,.30);
+    border-left:4px solid #0F766E !important;
+    color:#5EEAD4;
+}
+
+.form-message.error{
+    background:rgba(159,18,57,.12);
+    border:1px solid rgba(159,18,57,.30);
+    border-left:4px solid #9F1239;
+    color:#FDA4AF;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

@@ -204,9 +204,6 @@
 							ultricies erat dapibus.</p>
 					</section>
 				</div>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
 			</div>
 		</section>
 
@@ -218,8 +215,11 @@
 				<div class="split style1">
 					<section>
 
-						<div data-fs-success>Thanks for your submission!</div>
-						<div data-fs-error>Oops! There was a problem submitting your form.</div>
+						<div data-fs-success class="form-message success" style="display: block;">Mensagem enviada com
+							sucesso! Retornarei em breve.</div>
+						<div data-fs-error class="form-message error" style="display: block;">Ocorreu um problema
+							ao enviar a mensagem.
+							Tente novamente.</div>
 
 						<form id="my-form" method="post" action="https://formspree.io/f/xjgzyrpw">
 							<div class="fields">
@@ -229,23 +229,24 @@
 								</div>
 								<div class="field half">
 									<label for="email">E-mail</label>
-									<input type="text" name="email" id="email" required />
+									<input type="email" name="email" id="email" required />
 								</div>
 								<div class="field">
 									<label for="message">Mensagem</label>
-									<textarea name="message" id="message" rows="2"></textarea>
+									<textarea name="message" id="message" rows="2" required></textarea>
 								</div>
 							</div>
 							<ul class="actions">
-								<li><button type="submit" class="button submit">Enviar</button></li>
+								<li><button type="submit" class="button submit medium">Enviar</button></li>
 							</ul>
 						</form>
 					</section>
+
 					<section>
 						<ul class="contact">
 							<li>
 								<i class="fas fa-envelope"></i>
-								<a href="#">contato@heverton.dev.br</a>
+								<a href="mailto:hevertonbalducce@gmail.com">hevertonbalducce@gmail.com</a>
 							</li>
 							<li>
 								<i class="fab fa-whatsapp"></i>
@@ -258,7 +259,8 @@
 								<ul class="icons">
 									<h3>Redes</h3>
 									<li>
-										<a href="#" class="icon brands fa-linkedin-in">
+										<a href="www.linkedin.com/in/heverton-balducce"
+											class="icon brands fa-linkedin-in">
 											<span class="label">LinkedIn</span>
 										</a>
 									</li>
@@ -293,6 +295,7 @@
 	-->
 
 	<!-- Scripts -->
+	<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 	<script>
 		window.formspree =
 			window.formspree ||
@@ -304,7 +307,7 @@
 			formId: "xjgzyrpw",
 		});
 	</script>
-	<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
